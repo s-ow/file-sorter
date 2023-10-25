@@ -14,7 +14,18 @@ regarder l'extension
                         -> créer dossier
                             -> ranger dans dossier
             -> anormale
-                -> laisser pour l'instant
+                -> check si dossier autres
+                    -> dossier existe
+                        -> check si dossier extension
+                            -> dossier existe
+                                -> ranger dans dossier
+                            -> dossier existe pas
+                                -> créer dossier
+                                    -> ranger dans dossier
+                    -> dossier existe pas
+                        -> créer dossier
+                            -> créer dossier extension
+                                -> ranger dans dossier
 """
 
 import os
@@ -95,18 +106,17 @@ for fichier in fichiers:
             dossier_destination = os.path.join(dossier_downloads, categorie, extension_sans_point)
 
             if not os.path.exists(dossier_destination):
-                os.makedirs(dossier_destination)  # Créez les dossiers parents au besoin
+                os.makedirs(dossier_destination)
 
             source = chemin
             destination = os.path.join(dossier_destination, fichier)
 
             shutil.move(source, destination)
         else:
-            # Si aucune catégorie n'est trouvée, le fichier est d'abord placé dans un dossier "Autres"
             dossier_destination = os.path.join(dossier_downloads, "Autres", extension_sans_point)
 
             if not os.path.exists(dossier_destination):
-                os.makedirs(dossier_destination)  # Créez les dossiers parents au besoin
+                os.makedirs(dossier_destination)
 
             source = chemin
             destination = os.path.join(dossier_destination, fichier)
