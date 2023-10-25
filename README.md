@@ -15,7 +15,7 @@ FileSorter est un outil simple en Python conçu pour vous aider à organiser vos
 
 2. Clonez ce référentiel ou téléchargez le fichier source.
 
-3. Personnalisez (si besoin) les catégories et extensions dans le code source (voir `categories`, *ligne 24* dans le code).
+3. Personnalisez (si besoin) les catégories et extensions dans le code source (voir `categories`, *ligne 35* dans le code).
 
 4. Exécutez le script Python pour trier vos fichiers. Par défaut, les fichiers seront triés dans le dossier de téléchargements de l'utilisateur.
 
